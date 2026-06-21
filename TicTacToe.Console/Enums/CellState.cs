@@ -1,8 +1,8 @@
-namespace TicTacToe.Console.Enums;
+namespace TicTacToe.Desktop.Enums;
 
 public enum CellState
 {
-    Empty, 
+    Empty,
     X,
-    O
+    O,
 }
