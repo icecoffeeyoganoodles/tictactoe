@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
-using TicTacToe.Desktop.Enums; // ou .Models selon ton organisation
-
+using TicTacToe.Desktop.Enums;
 namespace TicTacToe.Desktop.Models;
 
 public class GameEngine
