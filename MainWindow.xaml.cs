@@ -57,6 +57,8 @@ public partial class MainWindow : Window
         GameGrid.Rows = _boardSize;
         GameGrid.Columns = _boardSize;
 
+        // calcul dynamique de la taille de la police
+        double dynamicFontSize = 150.0 / _boardSize;
         // creation boutons dynamique
         for (int r = 0; r < _boardSize; r++)
         {
@@ -65,6 +67,7 @@ public partial class MainWindow : Window
                 Button btn = new Button
                 {
                     Style = (Style)FindResource("CellButtonStyle"),
+                    FontSize = dynamicFontSize, // on applique la taille calculée ici
                     // stockage securise des coordonnees
                     Tag = new Tuple<int, int>(r, c),
                 };
