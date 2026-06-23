@@ -84,6 +84,12 @@
             <TextBlock Text="choix du pion :" VerticalAlignment="Center" Margin="0,0,15,0" Foreground="{StaticResource DarkText}" FontWeight="SemiBold"/>
             <RadioButton x:Name="RadioX" Content="X (croix)" IsChecked="True" Margin="0,0,15,0" VerticalAlignment="Center" Foreground="{StaticResource EasiBlue}" FontWeight="Bold"/>
             <RadioButton x:Name="RadioO" Content="O (rond)" Margin="0,0,25,0" VerticalAlignment="Center" Foreground="{StaticResource EasiRed}" FontWeight="Bold"/>
+
+            <!-- choix taille grille -->
+            <TextBlock Text="taille :" VerticalAlignment="Center" Margin="0,0,10,0" Foreground="{StaticResource DarkText}" FontWeight="SemiBold"/>
+            <!-- le nouveau champ de texte -->
+            <TextBox x:Name="GridSizeInput" Text="3" VerticalAlignment="Center" Margin="0,0,20,0" Width="40" Padding="5,2" FontSize="14" TextAlignment="Center" FontWeight="Bold"/>
+
             <Button Content="lancer la partie" Click="StartGame_Click" Style="{StaticResource ActionButtonStyle}"/>
         </StackPanel>
 

@@ -22,11 +22,23 @@ public partial class MainWindow : Window
         // recup choix joueur
         CellState humanChoice = RadioX.IsChecked == true ? CellState.X : CellState.O;
 
+        if (!int.TryParse(GridSizeInput.Text, out _boardSize) || _boardSize < 3)
+        {
+            _boardSize = 3;
+            GridSizeInput.Text = "3";
+        }
+        else if (_boardSize > 15)
+        {
+            _boardSize = 15;
+            GridSizeInput.Text = "15";
+        }
+
         // creation moteur
-        _engine = new GameEngine(_boardSize, 3, humanChoice);
+        _engine = new GameEngine(_boardSize, _boardSize, humanChoice);
 
         // blocage menu
         ConfigPanel.IsEnabled = false;
+        RestartButton.Visibility = Visibility.Collapsed;
 
         // demarrage
         _engine.StartGame();
@@ -52,9 +64,7 @@ public partial class MainWindow : Window
             {
                 Button btn = new Button
                 {
-                    FontSize = 32,
-                    FontWeight = FontWeights.Bold,
-                    Background = Brushes.White,
+                    Style = (Style)FindResource("CellButtonStyle"),
                     // stockage securise des coordonnees
                     Tag = new Tuple<int, int>(r, c),
                 };
@@ -70,6 +80,8 @@ public partial class MainWindow : Window
 
     private void Cell_Click(object sender, RoutedEventArgs e)
     {
+        if (_engine.Status != GameState.InProgress) return;
+
         // recup bouton et coordonnees
         Button clickedBtn = sender as Button;
         var position = (Tuple<int, int>)clickedBtn.Tag;
@@ -96,11 +108,19 @@ public partial class MainWindow : Window
                 CellState state = _engine.GameBoard.GetCellAt(r, c);
 
                 if (state == CellState.X)
+                {
                     btn.Content = "X";
+                    btn.Foreground = (Brush)new BrushConverter().ConvertFrom("#00478F");
+                }
                 else if (state == CellState.O)
+                {
                     btn.Content = "O";
+                    btn.Foreground = (Brush)new BrushConverter().ConvertFrom("#E30613");
+                }
                 else
+                {
                     btn.Content = "";
+                }
 
                 index++;
             }
