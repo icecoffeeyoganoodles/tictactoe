@@ -2,8 +2,8 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
-using TicTacToe.Desktop.Models;
 using TicTacToe.Desktop.Enums;
+using TicTacToe.Desktop.Models;
 
 namespace TicTacToe.Desktop;
 
@@ -83,7 +83,8 @@ public partial class MainWindow : Window
 
     private void Cell_Click(object sender, RoutedEventArgs e)
     {
-        if (_engine.Status != GameState.InProgress) return;
+        if (_engine.Status != GameState.InProgress)
+            return;
 
         // recup bouton et coordonnees
         Button clickedBtn = sender as Button;
