@@ -1,7 +1,7 @@
 # Tic-Tac-Toe - Test technique EASI
 
 Voici mon rendu pour le test technique du Tic-Tac-Toe. J'ai réalisé ce projet en C# avec WPF pour l'interface graphique. L'objectif était de concevoir une application robuste, lisible et intuitive.
-
+![Aperçu du jeu](GameScreenshot.png)
 ## Technologies utilisées
 
 * **Langage :** C#
