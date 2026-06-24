@@ -14,7 +14,7 @@ Voici mon rendu pour le test technique du Tic-Tac-Toe. J'ai réalisé ce projet 
 
 Afin d'enrichir le projet, j'ai implémenté les éléments suivants :
 
-* **Design personnalisé :** Intégration de la charte graphique d'EASI (Bleu et Rouge) au sein d'une interface claire et moderne.
+* **Design personnalisé :** Intégration de la charte graphique d'EASI (Bleu Nuit et Corail) au sein d'une interface claire et moderne. (basé sur le site web de Easi).
 * **Taille de grille dynamique :** La taille de la grille est paramétrable par l'utilisateur (ex: 5x5, 10x10). L'interface s'adapte automatiquement et ajuste dynamiquement la taille de la police pour maintenir une lisibilité optimale.
 * **Séparation des responsabilités :** Séparation stricte entre la logique métier (`GameEngine`, `Board`) et l'interface visuelle (`MainWindow.xaml`), respectant ainsi les bonnes pratiques de développement pour faciliter la maintenance.
 
